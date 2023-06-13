@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-8 m-auto">
-      <form>
+      <form [formGroup]="formGroup">
         <div class="mb-3">
           <label for="titulo" class="form-label"> Título: </label>
           <input
@@ -14,7 +14,7 @@
 
         <div class="mb-3">
             <label for="tipo" class="form-label">Tipo de Anúncio:</label>
-            <select id="tipo">
+            <select id="tipo" formControlName="tipo">
                 <option value="Comercial">Comercial</option>
                 <option value="Cultural">Cultural</option>
                 <option value="Institucional">Institucional</option>
@@ -27,7 +27,7 @@
             <label for="publico" class="form-label"> Público-alvo: </label>
             <input
               type="text"
-              formControlName="público"
+              formControlName="publico"
               class="form-control"
               id="publico"
               placeholder="É destinado a quem?"
@@ -47,18 +47,18 @@
 
           
           <div class="mb-3">
-            <label for="data" class="form-label"> Data da Publicação: </label>
+            <label for="info" class="form-label"> Descrição: </label>
             <input
-              type="date"
-              formControlName="data"
+              type="text"
+              formControlName="info"
               class="form-control"
-              id="data"
+              id="info"
             />
           </div>
 
 
         <div class="mb-3 d-flex justify-content-end">
-          <button class="btn btn-primary">Salvar</button>
+          <button class="btn btn-primary" (click)="save()">Salvar</button>
         </div>
       </form>
     </div>
@@ -68,8 +68,18 @@
     <img class="card-img-top" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBcUGMvyeBPXifSf0PaNfBiaibhfckPmXjyaxj6uiYfURq00LuixOlcw0eRklKFoICM7ORe-4yWk_dICBEkJ4-dxKScvai1vxGkfCmXgztLFLU0WBJudFQSyze8m8rIUqMrWLltvYXPWJNK4XajqCmKzLhsh_EQN6ew1Toc3KStbcDAsNgk0hFbBLNBQ/w640-h481/anuncio.jpg" alt="Card image cap">
     <div class="card-body">
       <h3 class="card-title">Título</h3>
-      <p class="card-text">Tipo</p>
-      <p class="card-text">Público-alvo</p>
-      <p class="card-text">Data de Publicação</p>
+      <h6 class="card-text">Tipo</h6>
+      <h6 class="card-text">Público-alvo</h6>
+      <p class="card-text">Descrição</p>
+    </div>
+  </div>
+
+  <div  class="card" style="width: 18rem; margin-left: 350px;" *ngFor="let anuncio of anuncios">
+    <img class="card-img-top" [src]="anuncio.imagem" alt="Card image cap">
+    <div class="card-body">
+      <h3 class="card-title">{{anuncio.titulo}}</h3>
+      <h6 class="card-text">{{anuncio.tipo}}</h6>
+      <h6 class="card-text">{{anuncio.publico}}</h6>
+      <p class="card-text">{{anuncio.info}}</p>
     </div>
   </div>
