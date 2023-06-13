@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-8 m-auto">
+      <form>
+        <div class="mb-3">
+          <label for="titulo" class="form-label"> Título: </label>
+          <input
+            type="text"
+            formControlName="titulo"
+            class="form-control"
+            id="titulo"
+          />
+        </div>
+  
+
+        <div class="mb-3">
+            <label for="tipo" class="form-label">Tipo de Anúncio:</label>
+            <select id="tipo">
+                <option value="Comercial">Comercial</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Institucional">Institucional</option>
+                <option value="Político">Político</option>
+                <option value="Religioso">Religioso</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="publico" class="form-label"> Público-alvo: </label>
+            <input
+              type="text"
+              formControlName="público"
+              class="form-control"
+              id="publico"
+              placeholder="É destinado a quem?"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="imagem" class="form-label"> Imagem: </label>
+            <input
+              type="url"
+              formControlName="imagem"
+              class="form-control"
+              id="imagem"
+              placeholder="Url da imagem"
+            />
+          </div>
+
+          
+          <div class="mb-3">
+            <label for="data" class="form-label"> Data da Publicação: </label>
+            <input
+              type="date"
+              formControlName="data"
+              class="form-control"
+              id="data"
+            />
+          </div>
+
+
+        <div class="mb-3 d-flex justify-content-end">
+          <button class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem; margin-left: 350px;">
+    <img class="card-img-top" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBcUGMvyeBPXifSf0PaNfBiaibhfckPmXjyaxj6uiYfURq00LuixOlcw0eRklKFoICM7ORe-4yWk_dICBEkJ4-dxKScvai1vxGkfCmXgztLFLU0WBJudFQSyze8m8rIUqMrWLltvYXPWJNK4XajqCmKzLhsh_EQN6ew1Toc3KStbcDAsNgk0hFbBLNBQ/w640-h481/anuncio.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h3 class="card-title">Título</h3>
+      <p class="card-text">Tipo</p>
+      <p class="card-text">Público-alvo</p>
+      <p class="card-text">Data de Publicação</p>
+    </div>
+  </div>
